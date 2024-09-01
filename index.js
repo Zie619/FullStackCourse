@@ -145,6 +145,18 @@ $(document).keypress(function(){
         
 });
 
+$("h1").click(function(){
+    if (!game_over && first_load) {
+        first_load = 0;
+        startTimer();
+        GamePlay();
+    }else if (game_over || first_load) {
+        GameInit();
+        startTimer();
+        GamePlay();
+    }
+    
+});
 
 
 let time = initialTime; // Current time
